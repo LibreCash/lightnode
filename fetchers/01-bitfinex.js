@@ -15,4 +15,4 @@ async function fetch(){
 	};
 }
 
-module.export = fetch;
+module.exports = fetch;

@@ -16,6 +16,5 @@ async function fetch(){
 		"timestamp":timestamp
 	};
 }
-fetch().then(console.log);
 
-module.export = fetch;
+module.exports = fetch;
