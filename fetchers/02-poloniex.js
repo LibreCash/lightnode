@@ -1,9 +1,8 @@
 const 
 	got = require('got');
-	fs = require('fs');
 	
 async function fetch(){
-	var timestamp = Date.now();
+	let timestamp = Date.now();
 	const URL = 'https://poloniex.com/public?command=returnTicker'
 	response = (await got(URL,{json:true})).body;
 	response = response.USDT_ETH;

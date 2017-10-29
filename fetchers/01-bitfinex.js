@@ -1,6 +1,5 @@
 const 
 	got = require('got');
-	fs = require('fs');
 	
 async function fetch(){
 	const URL = 'https://api.bitfinex.com/v1/pubticker/ethusd'
