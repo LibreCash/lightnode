@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/librecrypto/lightnode#readme",
   "dependencies": {
+    "mongoose": "^4.12.5",
     "poloniex-api-node": "^1.6.3",
     "web3": "^1.0.0-beta.24"
   },

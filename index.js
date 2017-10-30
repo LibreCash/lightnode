@@ -118,6 +118,7 @@ poloniex.on('error', (error) => {
 
 poloniex.openWebSocket();
 */
+/*
 let headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
     'Cookie': 'cf_clearance=25a517254e54524fd5166817cbd6957ec43699fe-1507474839-1800'
@@ -133,6 +134,7 @@ function log(...args) {
     wstream1.write(JSON.stringify(args) + '\n')
     console.log(args)
 }
+*/
 /*
 poloniex.returnLoanOrders('BTC', null, function (err, ticker) {
     if (!err) log(ticker);
@@ -147,7 +149,7 @@ poloniex.returnTicker().then((ticker) => {
 */
 
 
-
+/*
 poloniex.returnTicker((err, ticker) => {
     if (err) {
         console.log(err.message);
@@ -155,5 +157,43 @@ poloniex.returnTicker((err, ticker) => {
         console.log(ticker);
 }
 });
-
+*/
 // polinex test ]
+
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost/test', {
+    useMongoClient: true
+}).then(() => {
+    let
+        Exchange = require('./models/Exchange'),
+        Coin = require('./models/Coin')
+
+    var exchange = new Exchange({
+        name: 'qwerty'
+    })
+
+    exchange.save()
+
+    var coin = new Coin({
+        exchange: exchange,
+        mid: 0.5,
+        low: 0.2,
+        high: 0.7,
+        volume: 1000,
+        timestamp: new Date
+    })
+
+    coin.save()
+
+    exchange.save()
+
+    Exchange.find({}, (err, exchanges) => {
+        console.log(exchanges)
+    })
+
+    Coin.find({}, (err, exchanges) => {
+        console.log(coins)
+    })
+})
+
