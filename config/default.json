@@ -1,0 +1,7 @@
+{
+"smartContract":{
+	"address":"0x631086e57bbf0fF6FE3Ce02B705DCa076a71072c",
+	"abiPath":"./bin/OurOracle.abi",
+	"from":"0x32A3AA73A5eC44CE70ddf0D9372aA52bA793871E"
+}
+}
