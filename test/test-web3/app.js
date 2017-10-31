@@ -23,13 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-options = {
-  address: '0x631086e57bbf0fF6FE3Ce02B705DCa076a71072c',
-  abiPath: '../../bin/OurOracle.abi',
-  binPath: '../../bin/OurOracle.bin',
-  sourcePath: '../../smartcontract.sol',
-  from: '0x32A3AA73A5eC44CE70ddf0D9372aA52bA793871E'
-}
+var options = require('./config/config.js')
+
+console.log('options:', options)
 
 app.use('/', index);
 app.use('/*', (req, res, next) => {
