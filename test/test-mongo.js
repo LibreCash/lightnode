@@ -1,18 +1,18 @@
-const mongoose = require('mongoose')
-mongoose.Promise = Promise
+const mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
 mongoose.connect('mongodb://localhost/test', {
     useMongoClient: true
 }).then(() => {
     let
         Exchange = require('./models/Exchange'),
-        Coin = require('./models/Coin')
+        Coin = require('./models/Coin');
 
     var exchange = new Exchange({
         name: 'qwerty'
-    })
+    });
 
-    exchange.save()
+    exchange.save();
 
     var coin = new Coin({
         exchange: exchange,
@@ -20,19 +20,18 @@ mongoose.connect('mongodb://localhost/test', {
         low: 0.2,
         high: 0.7,
         volume: 1000,
-        timestamp: new Date
-    })
+        timestamp: new Date()
+    });
 
-    coin.save()
+    coin.save();
 
-    exchange.save()
+    exchange.save();
 
     Exchange.find({}, (err, exchanges) => {
-        console.log(exchanges)
-    })
+        console.log(exchanges);
+    });
 
     Coin.find({}, (err, coins) => {
-        console.log(coins)
-    })
-})
-
+        console.log(coins);
+    });
+});

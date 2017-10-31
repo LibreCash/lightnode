@@ -2,7 +2,7 @@
   "name": "lightnode",
   "version": "1.0.0",
   "description": "LibreBank lightnode (Exchanges to Solidity proxy)",
-  "main": "fetch-test.js",
+  "main": "tests.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

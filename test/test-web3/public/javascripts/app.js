@@ -24,7 +24,7 @@ App = {
         var from = document.getElementById('from').innerText;
 
         if (!App.account) {
-            console.log('App.account is not defined')
+            console.log('App.account is not defined');
             return
         }
 
@@ -38,7 +38,7 @@ App = {
                 from: from,
                 gas: 300000,
             }, function(error, transactionHash){
-                console.log(transactionHash, contract)
+                console.log(transactionHash, contract);
             });
     }
 }

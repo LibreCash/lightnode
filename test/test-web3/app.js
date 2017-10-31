@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var options = require('./config/config.js')
+var options = require('./config/config.js');
 
 console.log('options:', options)
 
@@ -35,7 +35,7 @@ app.use('/*', (req, res, next) => {
     bin: fs.readFileSync(options.binPath),
     source: fs.readFileSync(options.sourcePath),
     from: options.from,
-  })
+  });
 });
 
 // catch 404 and forward to error handler

@@ -1,29 +1,38 @@
 const 
-    ccxt = require('cctx');
+    ccxt = require('ccxt');
     
-items = []
+items = [];
 async function add(ctx, ticker) {
     try {
-        console.log('cctx fetch ticket', ctx.name, ticker)
-        markets = await ctx.loadMarkets()
-//    console.log(ctx.name, markets)
+        console.log('ccxt fetch ticket', ctx.name, ticker);
+        markets = await ctx.loadMarkets();
+//        console.log(ctx.name, markets)
         if (!(ticker in markets)) {
-            console.log('NOSYM', ctx.name, ticker)
-            return
+            console.log('NOSYM', ctx.name, ticker);
+            return;
         }
         ticker = await ctx.fetchTicker(ticker);
-//    console.log(ticker)
-        items.push([ctx.name, ticker]);
+//        console.log(ticker);
+        coin = {
+            name: ctx.name,
+            mid: ticker.last,
+            low: ticker.low,
+            high: ticker.high,
+            volume: ticker.baseVolume,
+            timestamp: ticker.timestamp
+        };
+
+        items.push(coin);
     }
     catch (error) {
-        console.log(`error ${ctx.name}`, error)
+        console.log(`error ${ctx.name}`, error);
     }
 }
 
 async function fetch() {
-    items = []
+    items = [];
 
-    console.log("ccxt.exchanges", ccxt.exchanges)
+    console.log("ccxt.exchanges", ccxt.exchanges);
 
     await add(new ccxt.kraken(), 'ETH/USD');
     await add(new ccxt.bitfinex(), 'ETH/USD');
@@ -120,9 +129,9 @@ async function fetch() {
 //    await add(new ccxt.yunbi(), 'ETH/USD'); notavailable
 //    await add(new ccxt.zaif(), 'ETH/USD');
 
-    console.log(items)
+    console.log(items);
 
-    return items
+    return items;
 }
 
 module.exports = fetch;
