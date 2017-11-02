@@ -1,9 +1,11 @@
-console.log('fetch test');
+const 
+    fs = require('fs'),
+    db = require('./lib/db'),
+    logger = require('./lib/logger');
 
-var fs = require('fs');
-var dao = require('./lib/dao');
+logger.info('fetch test');
 
-dao.connect('mongodb://localhost/test')
+db.connect('mongodb://localhost/test')
 
 async function fetching() {
     var fetchersList = fs.readdirSync('./fetchers');
@@ -19,8 +21,8 @@ async function fetching() {
             return data;
         }
         catch (error) {
-            console.log(`error processing fetcher ${file}`);
-            console.log(error);
+            logger.error(`error processing fetcher ${file}`);
+            logger.error(error);
             
             return {
                 id: file,
@@ -28,21 +30,19 @@ async function fetching() {
             };
         }
     }));
-    console.log(result);
+    logger.info(result);
     await saveData(result);
-//	var avg = agregateData(result);
-//	await pushToBlockchain(avg);
 }
 
 async function saveData(result) {
     await result.forEach((item)=>{
         if (item instanceof Array) {
             item.forEach((item1)=>{
-                dao.addCoin(item1);
+                db.addCoin(item1);
             })
         }
         else {
-            dao.addCoin(item);
+            db.addCoin(item);
         }
     })
 }

@@ -16,8 +16,11 @@
   "dependencies": {
     "ccxt": "git+https://github.com/ccxt/ccxt.git",
     "config": "^1.27.0",
+    "express": "^4.16.2",
     "got": "^7.1.0",
-    "web3": "^1.0.0-beta.24"
+    "mongoose": "^4.12.6",
+    "web3": "^1.0.0-beta.24",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "standard": "^10.0.3"

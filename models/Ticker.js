@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var coinSchema = new Schema({
-    exchange: { type: Schema.Types.ObjectId, ref: 'coinSchema' },
+var tickerSchema = new Schema({
+    exchange: { type: Schema.Types.ObjectId, ref: 'exchangeSchema' },
     mid: { type: Number, required: true },
     low: { type: Number, required: true },
     high: { type: Number, required: true },
@@ -10,4 +10,4 @@ var coinSchema = new Schema({
     timestamp: { type: Date, required: true }
 })
 
-module.exports = mongoose.model('Coin', coinSchema)
+module.exports = mongoose.model('Ticker', tickerSchema)
