@@ -38,11 +38,11 @@ async function saveData(result) {
     await result.forEach((item)=>{
         if (item instanceof Array) {
             item.forEach((item1)=>{
-                db.addCoin(item1);
+                db.addTicker(item1);
             })
         }
         else {
-            db.addCoin(item);
+            db.addTicker(item);
         }
     })
 }
