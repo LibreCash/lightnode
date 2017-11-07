@@ -1,11 +1,16 @@
 const 
-    client = require('../lib/net/client'),
+    client0 = require('../lib/net/client'),
+    client1 = require('../lib/net/client'),
     server = require('../lib/net/server'),
     LightNode = require('../lib/node/lightnode'),
     MasterNode = require('../lib/node/masternode');
 
 var options = require('../lib/net/config.js');
 
+var optionsLightnode0 = options.lightnode0;
+var optionsLightnode1 = options.lightnode1;
+var optionsMasternode0 = options.masternode0;
+/*
 async function run() {
     server.start(options, async ()=>{
         await client.connect(options);
@@ -24,13 +29,19 @@ async function run() {
         console.log('notifications', notifications);
     });
 }
-
+*/
 //run();
 
 
-const lightNode = new LightNode(1);
+const lightNode0 = new LightNode(1);
 
-lightNode.start(options);
+lightNode0.start(optionsLightnode0);
+
+
+const lightNode1 = new LightNode(2);
+
+lightNode1.start(optionsLightnode1);
+
 
 const masterNode = new MasterNode();
 
@@ -44,4 +55,4 @@ masterNode.on('nodeDisconnected', () => {
     logger.info('node disconnected');
 });
 
-masterNode.addNode(options);
+masterNode.addNode(optionsMasternode0);
