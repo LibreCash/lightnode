@@ -55,4 +55,4 @@ masterNode.on('nodeDisconnected', () => {
     logger.info('node disconnected');
 });
 
-masterNode.addNode(optionsMasternode0);
+masterNode.start(optionsMasternode0);

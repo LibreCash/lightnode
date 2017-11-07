@@ -12,7 +12,7 @@ var notificationSchema = new Schema({
     nodeId: { type: String, required: true },
     date: { type: Date, required: true },
     code: { type: String, required: true },
-    object: { type: String, required: true }, // todo
+    object: { type: String }, // todo
 });
 
 module.exports = mongoose.model('Notification', notificationSchema);
