@@ -28,7 +28,7 @@ async function run() {
 //run();
 
 
-const lightNode = new LightNode();
+const lightNode = new LightNode(1);
 
 lightNode.start(options);
 

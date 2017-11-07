@@ -41,10 +41,10 @@ function defaultExchanges() {
     var defaultTimeout = 5;
     return [
         {exchange: new ccxt.kraken(), reconnectTimeout: defaultTimeout},
-        {exchange: new ccxt.bitfinex(), reconnectTimeout: defaultTimeout},
-      /*  {exchange: new ccxt.bitfinex2(), reconnectTimeout: defaultTimeout},
+//        {exchange: new ccxt.bitfinex(), reconnectTimeout: defaultTimeout},
+//        {exchange: new ccxt.bitfinex2(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.bitflyer(), reconnectTimeout: defaultTimeout},
-        {exchange: new ccxt.bitbay(), reconnectTimeout: defaultTimeout},
+/*        {exchange: new ccxt.bitbay(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.bitlish(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.bitstamp(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.coinmarketcap(), reconnectTimeout: defaultTimeout},

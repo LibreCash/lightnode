@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var nodeSchema = new Schema({
-    nodesList: { type: Schema.Types.ObjectId, ref: 'nodesSchema' },
+    nodesList: { type: Schema.Types.ObjectId, ref: 'nodesListSchema' },
     state: { type: String }
 });
 
