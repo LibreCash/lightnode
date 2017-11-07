@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var tickerSchema = new Schema({
     exchange: { type: Schema.Types.ObjectId, ref: 'exchangeSchema' },
+    symbol: { type: String, required: true },
     mid: { type: Number, required: true },
     low: { type: Number, required: true },
     high: { type: Number, required: true },
