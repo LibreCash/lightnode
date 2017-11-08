@@ -1,3 +1,4 @@
+// NOT USED! TODO: REMOVE
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 

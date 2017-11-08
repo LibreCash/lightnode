@@ -1,3 +1,4 @@
+// NOT USED! TODO: REMOVE
 // notifications
 
 const mongoose = require('mongoose');
