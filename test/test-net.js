@@ -5,12 +5,14 @@ const
     LightNode = require('../lib/node/lightnode'),
     MasterNode = require('../lib/node/masternode');
 
-var options = require('../lib/net/config.js');
-
+var options = require('../config/default.json');
+    
 var optionsLightnode0 = options.lightnode0;
 var optionsLightnode1 = options.lightnode1;
 var optionsMasternode0 = options.masternode0;
-/*
+optionsMasternode0.smartContract = options.smartContract;
+
+/* single instance test
 async function run() {
     server.start(options, async ()=>{
         await client.connect(options);
@@ -29,9 +31,8 @@ async function run() {
         console.log('notifications', notifications);
     });
 }
+run();
 */
-//run();
-
 
 const lightNode0 = new LightNode(1);
 
@@ -43,7 +44,7 @@ const lightNode1 = new LightNode(2);
 lightNode1.start(optionsLightnode1);
 
 
-const masterNode = new MasterNode();
+const masterNode = new MasterNode(optionsMasternode0);
 
 masterNode.on('finished', () => {
     logger.info('master node finish');
@@ -55,4 +56,4 @@ masterNode.on('nodeDisconnected', () => {
     logger.info('node disconnected');
 });
 
-masterNode.start(optionsMasternode0);
+masterNode.start();

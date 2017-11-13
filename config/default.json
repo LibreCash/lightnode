@@ -1,7 +1,40 @@
 {
 "smartContract":{
+	"web3url": "ws://localhost:8545",
 	"address":"0x631086e57bbf0fF6FE3Ce02B705DCa076a71072c",
-	"abiPath":"./bin/OurOracle.abi",
+	"abiPath":"../contracts/OurOracle.abi",
 	"from":"0x32A3AA73A5eC44CE70ddf0D9372aA52bA793871E"
+},
+"lightnode0":{
+    "host": "localhost",
+    "port": 27925,
+	"updateTimeout": 10,
+	
+    "apiKey": "LIGHTNODE-0-API-KEY"
+},
+"lightnode1":{
+    "host": "localhost",
+    "port": 27950,
+	"updateTimeout": 10,
+	
+    "apiKey": "LIGHTNODE-1-API-KEY"
+},
+"masternode0":{
+    "rc_port": 27999,
+    "pingRate": 10,
+    "requestRetryCount": 10,
+	"reconnectTimeout": 15,
+	"updateTimeout": 5,
+    "lightnodes": {
+        "LIGHTNODE-0-API-KEY": {
+            "host": "localhost",
+            "port": 27925
+        },
+        "LIGHTNODE-1-API-KEY": {
+            "host": "localhost",
+            "port": 27950
+        }
+	},
+	"db": "mongodb://localhost/masternode0"
 }
 }
