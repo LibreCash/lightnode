@@ -6,11 +6,11 @@ async function fetch(){
 	response = (await got(URL,{json:true})).body;
 	return {
 		"name":"bitfinex",
-		"mid":response.mid, 
-		"low":response.low,
-		"high":response.high,
-		"volume":response.volume,
-		"timestamp":response.timestamp
+		"mid":parseFloat(response.mid), 
+		"low":parseFloat(response.low),
+		"high":parseFloat(response.high),
+		"volume":parseFloat(response.volume),
+		"timestamp":parseFloat(response.timestamp)
 	};
 }
 

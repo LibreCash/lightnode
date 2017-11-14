@@ -10,14 +10,22 @@
     "port": 27925,
 	"updateTimeout": 10,
 	
-    "apiKey": "LIGHTNODE-0-API-KEY"
+    "apiKey": "LIGHTNODE-0-API-KEY",
+
+    "exchanges": [
+        "kraken"
+    ]
 },
 "lightnode1":{
     "host": "localhost",
     "port": 27950,
 	"updateTimeout": 10,
 	
-    "apiKey": "LIGHTNODE-1-API-KEY"
+    "apiKey": "LIGHTNODE-1-API-KEY",
+
+    "exchanges": [
+        "bitflyer"
+    ]
 },
 "masternode0":{
     "rc_port": 27999,
