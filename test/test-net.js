@@ -36,24 +36,26 @@ run();
 
 const lightNode0 = new LightNode(1);
 
-lightNode0.start(optionsLightnode0);
+//lightNode0.start(optionsLightnode0);
 
 
 const lightNode1 = new LightNode(2);
 
-lightNode1.start(optionsLightnode1);
+//lightNode1.start(optionsLightnode1);
 
 
-const masterNode = new MasterNode(optionsMasternode0);
+(async () => {
+    const masterNode = await new MasterNode(optionsMasternode0);
 
-masterNode.on('finished', () => {
-    logger.info('master node finish');
-});
-masterNode.on('nodeConnected', () => {
-    logger.info('node connected');
-});
-masterNode.on('nodeDisconnected', () => {
-    logger.info('node disconnected');
-});
+    masterNode.on('finished', () => {
+        logger.info('master node finish');
+    });
+    masterNode.on('nodeConnected', () => {
+        logger.info('node connected');
+    });
+    masterNode.on('nodeDisconnected', () => {
+        logger.info('node disconnected');
+    });
 
-masterNode.start();
+    masterNode.start();
+})();
