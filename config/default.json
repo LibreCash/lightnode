@@ -32,7 +32,7 @@
     "pingRate": 10,
     "requestRetryCount": 10,
 	"reconnectTimeout": 15,
-	"updateTimeout": 5,
+	"updateTimeout": 1,
     "lightnodes": {
         "LIGHTNODE-0-API-KEY": {
             "host": "localhost",
