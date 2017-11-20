@@ -1,7 +1,4 @@
 const 
-    client0 = require('../lib/net/client'),
-    client1 = require('../lib/net/client'),
-    server = require('../lib/net/server'),
     LightNode = require('../lib/node/lightnode'),
     MasterNode = require('../lib/node/masternode');
 
@@ -12,37 +9,24 @@ var optionsLightnode1 = options.lightnode1;
 var optionsMasternode0 = options.masternode0;
 optionsMasternode0.smartContract = options.smartContract;
 
-/* single instance test
-async function run() {
-    server.start(options, async ()=>{
-        await client.connect(options);
-        console.log('aaa');
-        
-        var clientState = await client.getClientState();
-        console.log('clientState', clientState);
-        
-        var nodeState = await client.getNodeState();
-        console.log('nodeState', nodeState);
-        
-        var rates = await client.getRates();
-        console.log('rates', rates);
-        
-        var notifications = await client.getNotifications();
-        console.log('notifications', notifications);
-    });
-}
-run();
-*/
-
 const lightNode0 = new LightNode(1);
+lightNode0.start(optionsLightnode0);
 
-//lightNode0.start(optionsLightnode0);
-
-
-const lightNode1 = new LightNode(2);
-
+//Warning! Don't use directly second instance. Use cli/lightnode
+//const lightNode1 = new LightNode(2);
 //lightNode1.start(optionsLightnode1);
 
+const spawn = require('child_process').spawn;
+
+var child1 = spawn('node', ['cli/lightnode-cli.js', '--section', 'lightnode1']);
+//var b = a.stdout.toString();
+//var c = a.stderr.toString();
+child1.stdout.on('data', function(data) {
+    console.log(data.toString());
+});
+child1.stderr.on('data', function(data) {
+    console.log(data.toString());
+});
 
 (async () => {
     const masterNode = await new MasterNode(optionsMasternode0);

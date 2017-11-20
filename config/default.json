@@ -6,6 +6,8 @@
 	"from":"0x32A3AA73A5eC44CE70ddf0D9372aA52bA793871E"
 },
 "lightnode0":{
+    "id": "L0",
+
     "host": "localhost",
     "port": 27925,
 	"updateTimeout": 10,
@@ -17,6 +19,8 @@
     ]
 },
 "lightnode1":{
+    "id": "L1",
+    
     "host": "localhost",
     "port": 27950,
 	"updateTimeout": 10,
