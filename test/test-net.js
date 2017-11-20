@@ -9,7 +9,7 @@ var optionsLightnode1 = options.lightnode1;
 var optionsMasternode0 = options.masternode0;
 optionsMasternode0.smartContract = options.smartContract;
 
-const lightNode0 = new LightNode(1);
+const lightNode0 = new LightNode('L0-TEST');
 lightNode0.start(optionsLightnode0);
 
 //Warning! Don't use directly second instance. Use cli/lightnode
@@ -22,10 +22,15 @@ var child1 = spawn('node', ['cli/lightnode-cli.js', '--section', 'lightnode1']);
 //var b = a.stdout.toString();
 //var c = a.stderr.toString();
 child1.stdout.on('data', function(data) {
-    console.log(data.toString());
+/*    try {
+        console.log('light1:', JSON.parse(data));
+    } catch (e) {
+        console.log('light1:', data.toString());
+    }*/
+//    console.log('light1:', data.toString());
 });
 child1.stderr.on('data', function(data) {
-    console.log(data.toString());
+//    console.log(data.toString());
 });
 
 (async () => {
