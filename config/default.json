@@ -10,6 +10,7 @@
 
     "host": "localhost",
     "port": 27925,
+    "pingTimeout": 60,
 	"updateTimeout": 10,
 	
     "apiKey": "LIGHTNODE-0-API-KEY",
@@ -20,9 +21,10 @@
 },
 "lightnode1":{
     "id": "L1",
-    
+
     "host": "localhost",
     "port": 27950,
+    "pingTimeout": 60,
 	"updateTimeout": 10,
 	
     "apiKey": "LIGHTNODE-1-API-KEY",

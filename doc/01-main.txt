@@ -1,0 +1,35 @@
+1. Инструкция по запуску компонентов
+
+bitbucket.org:librecrypto/
+
+repo: 
+    lightnode/ - общий код для master/light
+        config/default.json - конфиг по-умолчанию, с ним должно все запускаться нормально
+
+package.json:
+    Сейчас запускается скрипт tests.js, который запускает test/test-net.js.
+    В test/test-net.js запускается 2 lightnode и 1 masternode.
+
+Запуск из командной строки:
+
+> node cli/lightnode-cli.js
+
+не обязательные параметры:
+	--config <config> - файл конфига
+	--section <section> - секция в файле конфига (по-умолчанию lightnode0)
+
+> node cli/masternode-cli.js
+
+не обязательные параметры:
+	--config <config> - файл конфига
+	--section <section> - секция в файле конфига (по-умолчанию masternode0)
+	--smartcontract <section> - секция в файле конфига для смарт-контракта (по-умолчанию smartContract)
+
+repo: 
+    masternode/
+        ui/ - код интерфейса
+
+Запуск из командной строки:
+
+> npm start
+

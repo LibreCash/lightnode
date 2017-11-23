@@ -1,4 +1,5 @@
 const 
+    logger = require('../lib/logger'),
     LightNode = require('../lib/node/lightnode'),
     MasterNode = require('../lib/node/masternode');
 

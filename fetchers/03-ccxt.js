@@ -2,32 +2,28 @@ const
     ccxt = require('ccxt'),
     logger = require('../lib/logger');
     
-items = [];
 async function add(ctx, ticker) {
     try {
-        logger.debug('ccxt fetch ticket', ctx.name, ticker);
+        logger.debug('ccxt fetch ticker', ctx.name, ticker);
 
         markets = await ctx.loadMarkets();
-        logger.debug(ctx.name, markets)
+//        logger.debug(`markets ${ctx.name}`, markets);
 
         if (!(ticker in markets)) {
-            logger.error('NOSYM', ctx.name, ticker);
-            return;
+            throw new Error(`NOSYM ${ticker}`);
         }
 
         ticker = await ctx.fetchTicker(ticker);
-        logger.debug(ticker);
+//        logger.debug(ticker);
 
-        item = {
+        var item = {
             name: ctx.name,
             mid: ticker.last,
             low: ticker.low,
             high: ticker.high,
-            volume: ticker.baseVolume,
+            volume: ticker.baseVolume || ticker.quoteVolume,
             timestamp: ticker.timestamp
         };
-
-        items.push(item);
 
         return item
     }
@@ -43,8 +39,8 @@ function defaultExchanges() {
         {exchange: new ccxt.kraken(), reconnectTimeout: defaultTimeout},
 //        {exchange: new ccxt.bitfinex(), reconnectTimeout: defaultTimeout},
 //        {exchange: new ccxt.bitfinex2(), reconnectTimeout: defaultTimeout},
-        {exchange: new ccxt.bitflyer(), reconnectTimeout: defaultTimeout},
-/*        {exchange: new ccxt.bitbay(), reconnectTimeout: defaultTimeout},
+        {exchange: new ccxt.bitbay(), reconnectTimeout: defaultTimeout},
+/*        {exchange: new ccxt.bitflyer(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.bitlish(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.bitstamp(), reconnectTimeout: defaultTimeout},
         {exchange: new ccxt.coinmarketcap(), reconnectTimeout: defaultTimeout},
@@ -66,20 +62,18 @@ function defaultExchanges() {
 }
 
 async function processExchanges(exchanges) {
-    logger.debug(exchanges);
-    await Promise.all(exchanges.map(async (item)=>{
+    logger.debug('process exchanges:', exchanges);
+    var items = await Promise.all(exchanges.map(async (item)=>{
         var result = await add(item.exchange, 'ETH/USD');
-        logger.debug('exchange add', result)
-        return result
+        logger.debug(`exchange add ${JSON.stringify(result)}`);
+        return result;
     }));
+    return items;
 }
 
 async function fetch() {
-    items = [];
-
-    await processExchanges(defaultExchanges());
-    logger.debug('cctx result:', items);
-
+    var items = await processExchanges(defaultExchanges());
+//    logger.debug('cctx result:', items);
     return items;
 }
 

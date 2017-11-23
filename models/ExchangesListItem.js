@@ -2,7 +2,7 @@
 // ExchangesListItem
 //  nodeId
 //  clientId
-//  tickets[]:Ticker
+//  tickers[]:Ticker
 
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
