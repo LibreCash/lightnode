@@ -49,6 +49,10 @@
             "port": 27950
         }
 	},
-	"db": "mongodb://localhost/masternode0"
+    "db": "mongodb://localhost/masternode0",
+    "remoteControl": {
+        "secret": "masternode0-test-secret",
+        "timeout": 15
+    }
 }
 }
