@@ -1,6 +1,15 @@
-// NOT USED! TODO: REMOVE
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+
+/** @title Schema Ticker for lightnode aggregation
+ * @param exchange ObjectId
+ * @param symbol String
+ * @param mid Number
+ * @param low Number
+ * @param high Number
+ * @param volume Number
+ * @param timestamp Date
+ */
 
 var tickerSchema = new Schema({
     exchange: { type: Schema.Types.ObjectId, ref: 'exchangeSchema' },
@@ -12,4 +21,11 @@ var tickerSchema = new Schema({
     timestamp: { type: Date, required: true }
 });
 
-module.exports = mongoose.model('Ticker', tickerSchema);
+/**
+ * @title Create model Ticker
+ * @param conn mongoose connection
+ */
+
+module.exports.createModel = conn => {
+    return conn.model('Ticker', tickerSchema);
+}

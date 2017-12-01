@@ -1,19 +1,25 @@
-// NOT USED! TODO: REMOVE
-// Notification
-//  nodeId
-//  date
-//  code
-//  object
-
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+/** @title Schema Notification
+ * @param nodeId String
+ * @param date Date
+ * @param code String
+ * @param object String
+ */
+
 var notificationSchema = new Schema({
-    notificationsList: { type: Schema.Types.ObjectId, ref: 'notificationsListSchema' },
     nodeId: { type: String, required: true },
     date: { type: Date, required: true },
     code: { type: String, required: true },
-    object: { type: String }, // todo
+    object: { type: String },
 });
 
-module.exports = mongoose.model('Notification', notificationSchema);
+/**
+ * @title Create model Notification
+ * @param conn mongoose connection
+ */
+
+module.exports.createModel = conn => {
+    return conn.model('Notification', notificationSchema);
+}
