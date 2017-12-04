@@ -4,7 +4,12 @@
   "description": "LibreBank lightnode (Exchanges to Solidity proxy)",
   "main": "tests.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "node_modules/.bin/mocha --reporter spec test/autotests/",
+    "docker": "docker build",
+    "jsdoc": "jsdoc lib/db.js -d doc/api-jsdoc",
+    "documentation": "documentation build lib/db.js -f html -o doc/api-documentationjs",
+    "sphinx": "cd doc/sphinx-docs && make html"
   },
   "repository": {
     "type": "git",
@@ -36,6 +41,7 @@
     "winston": "^2.4.0"
   },
   "devDependencies": {
+    "jsdoc": "^3.5.5",
     "should": "^13.1.3",
     "standard": "^10.0.3"
   }

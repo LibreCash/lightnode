@@ -10,6 +10,11 @@ GET /ping
 				если null, то нода просто отвечает pong
 		 		если указан, то ping обновляет таймер соединения. иначе disconnect (на данный момент не проверяется)
 
+POST /login
+	вход passport
+	username - юзер
+	password - пароль
+
 GET /connect 
 	подключиться к ноде
 	req:
