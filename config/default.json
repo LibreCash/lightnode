@@ -8,6 +8,9 @@
 "lightnode0":{
     "id": "L0",
 
+    "user": "test",
+    "password": "1234567890",
+
     "host": "localhost",
     "port": 27925,
     "pingTimeout": 60,
@@ -21,6 +24,9 @@
 },
 "lightnode1":{
     "id": "L1",
+
+    "user": "test",
+    "password": "1234567890",
 
     "host": "localhost",
     "port": 27950,
@@ -41,10 +47,14 @@
 	"updateTimeout": 1,
     "lightnodes": {
         "LIGHTNODE-0-API-KEY": {
+            "user": "test",
+            "password": "1234567890",
             "host": "localhost",
             "port": 27925
         },
         "LIGHTNODE-1-API-KEY": {
+            "user": "test",
+            "password": "1234567890",
             "host": "localhost",
             "port": 27950
         }
