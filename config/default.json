@@ -1,9 +1,9 @@
 {
 "smartContract":{
-	"web3url": "ws://localhost:8545",
-	"address":"0x18e9d1e37FA443eD68E88cc595e420eD77C461f7",
-	"abiPath":"../contracts/OwnOracle.abi",
-	"from":"0x61EDC0082535867BA7759CF5ED86b040672d88ff"
+	"web3url": "ws://localhost:8546",
+	"address":"0xd20480b19B174AD2bb9966166F36074cB4fCF487",
+	"abiPath":"contracts/OurOracle.abi",
+	"from":"0x8128962bcdc69ca0b8d359ab0424e9a7b81bdf90"
 },
 "lightnode0":{
     "id": "L0",

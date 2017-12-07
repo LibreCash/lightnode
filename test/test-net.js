@@ -8,6 +8,8 @@ var options = require('../config/default.json');
 var optionsLightnode0 = options.lightnode0;
 var optionsLightnode1 = options.lightnode1;
 var optionsMasternode0 = options.masternode0;
+optionsLightnode0.smartContract = options.smartContract;
+optionsLightnode1.smartContract = options.smartContract;
 optionsMasternode0.smartContract = options.smartContract;
 
 const lightNode0 = new LightNode('L0-TEST');
