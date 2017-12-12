@@ -1,0 +1,9 @@
+docker-compose.yml
+z_docker/
+    config/
+        00-docker-net
+            config-common.json - config node
+    docker-geth/
+        Dockerfile - Ethereum geth file
+
+> sudo docker-compose up

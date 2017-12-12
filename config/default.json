@@ -20,7 +20,9 @@
 
     "exchanges": [
         "kraken"
-    ]
+    ],
+
+    "logLevel": "debug"
 },
 "lightnode1":{
     "id": "L1",
@@ -37,7 +39,9 @@
 
     "exchanges": [
         "bitflyer"
-    ]
+    ],
+
+    "logLevel": "debug"
 },
 "masternode0":{
     "rc_port": 27999,
@@ -63,6 +67,8 @@
     "remoteControl": {
         "secret": "masternode0-test-secret",
         "timeout": 15
-    }
+    },
+
+    "logLevel": "debug"
 }
 }

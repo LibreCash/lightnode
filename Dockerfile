@@ -8,6 +8,9 @@ WORKDIR /usr/src/librenode
 # where available (npm@5+)
 COPY package*.json ./
 
+# docker conf
+#COPY z_docker/config/00-docker-net/config-common.json ./config/
+
 RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production

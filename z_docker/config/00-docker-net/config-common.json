@@ -1,0 +1,74 @@
+{
+    "smartContract":{
+        "web3url": "ws://localhost:8546",
+        "address":"0xd20480b19B174AD2bb9966166F36074cB4fCF487",
+        "abiPath":"contracts/OurOracle.abi",
+        "from":"0x8128962bcdc69ca0b8d359ab0424e9a7b81bdf90"
+    },
+    "lightnode0":{
+        "id": "L0",
+    
+        "user": "test",
+        "password": "1234567890",
+    
+        "host": "localhost",
+        "port": 27925,
+        "pingTimeout": 60,
+        "updateTimeout": 10,
+        
+        "apiKey": "LIGHTNODE-0-API-KEY",
+    
+        "exchanges": [
+            "kraken"
+        ],
+    
+        "logLevel": "info"
+    },
+    "lightnode1":{
+        "id": "L1",
+    
+        "user": "test",
+        "password": "1234567890",
+    
+        "host": "localhost",
+        "port": 27950,
+        "pingTimeout": 60,
+        "updateTimeout": 10,
+        
+        "apiKey": "LIGHTNODE-1-API-KEY",
+    
+        "exchanges": [
+            "bitflyer"
+        ],
+    
+        "logLevel": "info"
+    },
+    "masternode0":{
+        "rc_port": 27999,
+        "pingRate": 10,
+        "requestRetryCount": 10,
+        "reconnectTimeout": 15,
+        "updateTimeout": 1,
+        "lightnodes": {
+            "LIGHTNODE-0-API-KEY": {
+                "user": "test",
+                "password": "1234567890",
+                "host": "localhost",
+                "port": 27925
+            },
+            "LIGHTNODE-1-API-KEY": {
+                "user": "test",
+                "password": "1234567890",
+                "host": "localhost",
+                "port": 27950
+            }
+        },
+        "db": "mongodb://localhost/masternode0",
+        "remoteControl": {
+            "secret": "masternode0-test-secret",
+            "timeout": 15
+        },
+    
+        "logLevel": "info"
+    }
+    }
