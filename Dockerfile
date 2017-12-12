@@ -29,11 +29,8 @@ EXPOSE 27017
 
 RUN apt-get install -y supervisor
 
-
-
 EXPOSE 27999
 EXPOSE 27925
 EXPOSE 27950
-#CMD [ "npm", "start" ]
 
 CMD ["/usr/bin/supervisord", "-n"]
