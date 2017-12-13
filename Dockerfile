@@ -18,22 +18,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# MONGO
-
-RUN mkdir -p /data/db
-
-RUN apt-get update
-
-RUN apt-get install mongodb mongodb-server -y
-
-EXPOSE 27017
-
-# SUPERVISOR
-
-RUN apt-get install -y supervisor
-
 EXPOSE 27999
 EXPOSE 27925
 EXPOSE 27950
 
-CMD ["/usr/bin/supervisord", "-n"]
+CMD ["npm", "start"]
