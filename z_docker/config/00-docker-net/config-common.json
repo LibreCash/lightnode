@@ -22,7 +22,8 @@
             "kraken"
         ],
     
-        "logLevel": "info"
+        "logLevel": "info",
+        "db": "mongodb://mongo:27017/lightnode0"
     },
     "lightnode1":{
         "id": "L1",
@@ -41,7 +42,8 @@
             "bitflyer"
         ],
     
-        "logLevel": "info"
+        "logLevel": "info",
+        "db": "mongodb://mongo:27017/lightnode1"
     },
     "masternode0":{
         "rc_port": 27999,
@@ -53,17 +55,17 @@
             "LIGHTNODE-0-API-KEY": {
                 "user": "test",
                 "password": "1234567890",
-                "host": "localhost",
+                "host": "146.185.168.54",
                 "port": 27925
             },
             "LIGHTNODE-1-API-KEY": {
                 "user": "test",
                 "password": "1234567890",
-                "host": "localhost",
+                "host": "138.68.74.55",
                 "port": 27950
             }
         },
-        "db": "mongodb://localhost/masternode0",
+        "db": "mongodb://mongo:27017/masternode0",
         "remoteControl": {
             "secret": "masternode0-test-secret",
             "timeout": 15

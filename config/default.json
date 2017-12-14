@@ -22,7 +22,8 @@
         "kraken"
     ],
 
-    "logLevel": "debug"
+    "logLevel": "debug",
+    "db": "mongodb://localhost/lightnode0"
 },
 "lightnode1":{
     "id": "L1",
@@ -41,7 +42,8 @@
         "bitflyer"
     ],
 
-    "logLevel": "debug"
+    "logLevel": "debug",
+    "db": "mongodb://localhost/lightnode1"
 },
 "masternode0":{
     "rc_port": 27999,

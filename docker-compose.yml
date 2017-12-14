@@ -1,6 +1,6 @@
 version: "2"
 services:
-  web:
+  librenode987:
     build: .
     ports:
       - "27999:27999"

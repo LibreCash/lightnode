@@ -8,9 +8,6 @@ WORKDIR /usr/src/librenode
 # where available (npm@5+)
 COPY package*.json ./
 
-# docker conf
-#COPY z_docker/config/00-docker-net/config-common.json ./config/
-
 RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production
@@ -18,8 +15,18 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# docker conf srv
+COPY z_docker/config/00-docker-net/config-common.json ./config/default.json
+
+RUN ls && cat ./config/default.json
+
 EXPOSE 27999
 EXPOSE 27925
 EXPOSE 27950
 
-CMD ["npm", "start"]
+RUN apt-get update
+
+RUN apt-get install -y supervisor
+
+CMD ["/usr/bin/supervisord", "-n"]
+#CMD ["npm", "start"]

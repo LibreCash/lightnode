@@ -17,7 +17,15 @@ var options = {
 };
 
 var argv = minimist(process.argv.slice(2), {});
-console.log(argv);
+//console.log(argv);
+
+if (argv.help) {
+    console.log(usage);
+    Object.keys(describe).forEach(function (p) {
+        console.log('  --'+p+' -', describe[p]);
+    });
+    return;
+}
 
 if (argv.config) {
     options.config = argv.config;
