@@ -4,6 +4,7 @@ poloniex.txt
 .idea
 _removed.js
 supervisor.log
+.vscode
 
 ### Node ###
 # Logs

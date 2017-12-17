@@ -51,3 +51,4 @@ child1.stderr.on('data', function(data) {
 
     masterNode.start();
 })();
+

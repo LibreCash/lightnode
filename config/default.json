@@ -67,8 +67,10 @@
 	},
     "db": "mongodb://localhost/masternode0",
     "remoteControl": {
-        "secret": "masternode0-test-secret",
-        "timeout": 15
+        "jwt": {
+            "secret": "secret",
+            "timeout": 15
+        }
     },
 
     "logLevel": "debug"
