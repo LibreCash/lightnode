@@ -14,7 +14,7 @@
     "host": "localhost",
     "port": 27925,
     "pingTimeout": 60,
-	"updateTimeout": 10,
+	"updateTimeout": 30,
 	
     "apiKey": "LIGHTNODE-0-API-KEY",
 
@@ -34,7 +34,7 @@
     "host": "localhost",
     "port": 27950,
     "pingTimeout": 60,
-	"updateTimeout": 10,
+	"updateTimeout": 30,
 	
     "apiKey": "LIGHTNODE-1-API-KEY",
 
@@ -50,7 +50,7 @@
     "pingRate": 10,
     "requestRetryCount": 10,
 	"reconnectTimeout": 15,
-	"updateTimeout": 1,
+	"updateTimeout": 5,
     "lightnodes": {
         "LIGHTNODE-0-API-KEY": {
             "user": "test",
