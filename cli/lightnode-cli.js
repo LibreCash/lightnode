@@ -2,16 +2,18 @@ const
     minimist = require('minimist'),
     LightNode = require('../lib/node/lightnode');
 
-var usage = process.argv[1] + ' [--config <config>] [--section <section>]';
+var usage = process.argv[1] + ' [--config <config>] [--section <section>] [--smartcontract <section>]';
 
 var describe = {
-    'config': 'config (default: ../config/default.json)',
-    'section': 'config section (default: lightnode0)'
+    config: 'config (default: ../config/default.json)',
+    section: 'config section (default: lightnode0)',
+    smartcontract: 'config section smartcontract (default: smartContract)'
 };
 
 var options = {
     config: '../config/default.json',
-    section: 'lightnode0'
+    section: 'lightnode0',
+    smartcontract: 'smartContract'
 };
 
 var argv = minimist(process.argv.slice(2), {});
@@ -37,6 +39,7 @@ var config = require(options.config);
 console.log('lightnode-cli: using section:', options.section);
 
 var optionsLightnode = config[options.section];
+optionsLightnode.smartContract = config[options.smartcontract];
 
 const lightNode = new LightNode(optionsLightnode.id);
 

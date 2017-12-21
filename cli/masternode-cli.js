@@ -2,18 +2,16 @@ const
     minimist = require('minimist'),
     MasterNode = require('../lib/node/masternode');
 
-var usage = process.argv[1] + ' [--config <config>] [--section <section>] [--smartcontract <section>]';
+var usage = process.argv[1] + ' [--config <config>] [--section <section>]';
 
 var describe = {
     config: 'config (default: ../config/default.json)',
-    section: 'config section (default: masternode0)',
-    smartcontract: 'config section smartcontract (default: smartContract)'
+    section: 'config section (default: masternode0)'
 };
 
 var options = {
     config: '../config/default.json',
-    section: 'masternode0',
-    smartcontract: 'smartContract'
+    section: 'masternode0'
 };
 
 var argv = minimist(process.argv.slice(2), {});
@@ -42,7 +40,6 @@ if (argv.smartcontract) {
 var config = require(options.config);
 
 var optionsMasternode = config[options.section];
-optionsMasternode.smartContract = config[options.smartcontract];
 
 (async () => {
     const masterNode = await new MasterNode(optionsMasternode);
