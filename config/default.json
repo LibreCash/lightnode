@@ -25,7 +25,16 @@
     ],
 
     "logLevel": "debug",
-    "db": "mongodb://localhost/lightnode0"
+    "db": "mongodb://localhost/lightnode0",
+
+    "mail": {
+        "useTestAccount": true,
+        "host": "smtp.ethereal.email",
+        "port": 587,
+        "secure": false,
+        "from": "\"LightNode0 👻\" <foo@librebank.com>",
+        "to": "neo-crypt@neo-crypt.ai"
+    }
 },
 "lightnode1":{
     "id": "L1",
@@ -45,7 +54,16 @@
     ],
 
     "logLevel": "debug",
-    "db": "mongodb://localhost/lightnode1"
+    "db": "mongodb://localhost/lightnode1",
+
+    "mail": {
+        "useTestAccount": true,
+        "host": "smtp.ethereal.email",
+        "port": 587,
+        "secure": false,
+        "from": "\"LightNode0 👻\" <foo@librebank.com>",
+        "to": "neo-crypt@neo-crypt.ai"
+    }
 },
 "masternode0":{
     "rc_port": 27999,
@@ -75,6 +93,20 @@
         }
     },
 
+    "mail": {
+        "useTestAccount": false,
+        "host": "smtp.ethereal.email",
+        "port": 587,
+        "secure": true,
+        "auth": {
+            "user": "user12345678",
+            "pass": "pass12354678"
+        },
+        "from": "\"LightNode0 👻\" <foo@librebank.com>",
+        "to": "neo-crypt@neo-crypt.ai"
+    },
+
     "logLevel": "debug"
+
 }
 }
