@@ -26,6 +26,7 @@
 
     "logLevel": "debug",
     "db": "mongodb://localhost/lightnode0",
+    "dbEnable": true,
 
     "mail": {
         "useTestAccount": true,
@@ -55,6 +56,7 @@
 
     "logLevel": "debug",
     "db": "mongodb://localhost/lightnode1",
+    "dbEnable": true,
 
     "mail": {
         "useTestAccount": true,
