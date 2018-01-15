@@ -21,8 +21,8 @@
     "apiKey": "LIGHTNODE-0-API-KEY",
 
     "exchanges": [
-        {"kraken": "XETHZUSD"},
-        {"bitfinex": "ETHUSD"}
+        {"kraken": {"currency": "XETHZUSD"}},
+        {"bitfinex": {"currency": "ETHUSD"}}
     ],
     "minimumExchangesLimit": 2,
 
@@ -53,7 +53,7 @@
     "apiKey": "LIGHTNODE-1-API-KEY",
 
     "exchanges": [
-        "bitflyer"
+        {"gdax": {"currency": "ETH-USD"}}
     ],
 
     "minimumExchangesLimit": 1,
