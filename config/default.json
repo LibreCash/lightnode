@@ -21,8 +21,10 @@
     "apiKey": "LIGHTNODE-0-API-KEY",
 
     "exchanges": [
-        "kraken"
+        {"kraken": "XETHZUSD"},
+        {"bitfinex": "ETHUSD"}
     ],
+    "minimumExchangesLimit": 2,
 
     "logLevel": "debug",
     "db": "mongodb://localhost/lightnode0",
@@ -53,6 +55,8 @@
     "exchanges": [
         "bitflyer"
     ],
+
+    "minimumExchangesLimit": 1,
 
     "logLevel": "debug",
     "db": "mongodb://localhost/lightnode1",
