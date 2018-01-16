@@ -2,23 +2,21 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 /** @title Schema Ticker for lightnode aggregation
- * @param exchange ObjectId
- * @param symbol String
- * @param mid Number
- * @param low Number
- * @param high Number
- * @param volume Number
- * @param timestamp Date
+ * @param ObjectId exchange
+ * @param String symbol Exchagne symbol
+ * @param Number lastest Lastest price
+ * @param Date updateTime Fetcher update time
+ * @param String timestamp Timestamp from exchange
+ * @param {*} err Error
  */
 
 var tickerSchema = new Schema({
     exchange: { type: Schema.Types.ObjectId, ref: 'exchangeSchema' },
     symbol: { type: String, required: true },
-    mid: { type: Number, required: true },
-    low: { type: Number, required: true },
-    high: { type: Number, required: true },
-    volume: { type: Number, required: true },
-    timestamp: { type: Date, required: true }
+    lastest: { type: Number, required: true },
+    updateTime: { type: String, required: true },
+    timestamp: { type: String, required: true },
+    err: { type: String }
 });
 
 /**

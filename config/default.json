@@ -77,20 +77,24 @@
     "requestRetryCount": 10,
 	"reconnectTimeout": 15,
 	"updateTimeout": 5,
-    "lightnodes": {
-        "LIGHTNODE-0-API-KEY": {
+    "lightnodes": [
+        {
+            "name": "L-0",
+            "description": "Alpha node",
             "user": "test",
             "password": "1234567890",
             "host": "localhost",
             "port": 27925
         },
-        "LIGHTNODE-1-API-KEY": {
+        {
+            "name": "L-1",
+            "description": "Beta node",
             "user": "test",
             "password": "1234567890",
             "host": "localhost",
             "port": 27950
         }
-	},
+    ],
     "db": "mongodb://localhost/masternode0",
     "remoteControl": {
         "jwt": {
