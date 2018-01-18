@@ -7,7 +7,8 @@
     "infuraUrl": "https://rinkeby.infura.io/E4jEQrMLKM1gTCwHUKFr",
     "gasLimit": 147000,
     "password": "12345678",
-    "minimumBalance": 1000
+    "minimumBalance": 1000,
+    "updateTimeout": 1
 },
 "lightnode0":{
     "id": "L0",
