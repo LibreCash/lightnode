@@ -1,14 +1,14 @@
 {
 "smartContract":{
 	"web3url": "ws://localhost:8546",
-	"address":"0xd20480b19B174AD2bb9966166F36074cB4fCF487",
-	"abiPath":"contracts/OurOracle.abi",
+	"address":"0x17ECCDA512d0F59D60eC28a98ef831e264292d66",
+	"abiPath":"contracts/OurOracle-new.abi",
     "from":"0x8128962bcdc69ca0b8d359ab0424e9a7b81bdf90",
     "infuraUrl": "https://rinkeby.infura.io/E4jEQrMLKM1gTCwHUKFr",
     "gasLimit": 147000,
     "password": "12345678",
     "minimumBalance": 1000,
-    "updateTimeout": 1
+    "updateTimeout": 1000
 },
 "lightnode0":{
     "id": "L0",
