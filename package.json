@@ -22,6 +22,7 @@
     "bluebird": "^3.5.1",
     "ccxt": "git+https://github.com/ccxt/ccxt.git",
     "chai": "^4.1.2",
+    "crypto": "^1.0.1",
     "express": "^4.16.2",
     "express-jwt": "^5.3.0",
     "express-session": "^1.15.6",
