@@ -40,6 +40,12 @@
         "secure": false,
         "from": "\"LightNode0 👻\" <foo@librebank.com>",
         "to": "neo-crypt@neo-crypt.ai"
+    },
+
+    "slack": {
+        "name": "lightnode-0",
+        "token": "",
+        "channel": "ouroracles"
     }
 },
 "lightnode1":{
@@ -70,11 +76,18 @@
         "host": "smtp.ethereal.email",
         "port": 587,
         "secure": false,
-        "from": "\"LightNode0 👻\" <foo@librebank.com>",
+        "from": "\"LightNode1 👻\" <foo@librebank.com>",
         "to": "neo-crypt@neo-crypt.ai"
+    },
+
+    "slack": {
+        "name": "lightnode-1",
+        "token": "",
+        "channel": "ouroracles"
     }
 },
 "masternode0":{
+    "id": "M0",
     "rc_port": 27999,
     "pingRate": 10,
     "requestRetryCount": 10,
@@ -115,11 +128,16 @@
             "user": "user12345678",
             "pass": "pass12354678"
         },
-        "from": "\"LightNode0 👻\" <foo@librebank.com>",
+        "from": "\"MasterNode0 👻\" <foo@librebank.com>",
         "to": "neo-crypt@neo-crypt.ai"
     },
 
-    "logLevel": "debug"
+    "logLevel": "debug",
 
+    "slack": {
+        "name": "master-0",
+        "token": "",
+        "channel": "ouroracles"
+    }
 }
 }
