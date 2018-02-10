@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: models/Notification.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,43 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: models/Notification.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/** @title Schema Notification
+ * @param nodeId String
+ * @param date Date
+ * @param code String
+ * @param object String
+ */
 
-    <h3> </h3>
+var notificationSchema = new Schema({
+    nodeId: { type: String, required: true },
+    date: { type: Date, required: true },
+    code: { type: String, required: true },
+    object: { type: String },
+});
 
+/**
+ * @title Create model Notification
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('Notification', notificationSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

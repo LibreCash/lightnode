@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: test/lib/node/utils.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,79 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: test/lib/node/utils.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Process tickers avarage rate
+ * @param {Array} tickers 
+ * @param {*} options {avarageRate, deltaMax}
+ * @returns {*} {err, avarageRate}
+ */
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
+function processTickersAvarageRate(tickers, options) {
+    var fails = null;
+    var avarageRate = 0;
     
+    tickers.forEach((ticker)=>{
+//        console.log(ticker);
+        var value = ticker.lastest;
+//      var mid = ticker.mid;
 
+        // verify node
+//        var delta = mid - options.avarageRate;
+        var delta = value - options.avarageRate;
+        if (options.avarageRate == 0)
+            delta = 0;
+        var deltaMax = options.avarageRate * options.deltaMax;
+        if (Math.abs(delta) > deltaMax) {
+            fails = (fails || []).push(ticker);
+        }
+        else {
+//            avarageRate += mid;
+            avarageRate += value;
+        }
+    });
+    
+    avarageRate /= tickers.length;
 
+    return {
+        err: fails,
+        avarageRate,
+    }
+}
 
+/**
+ * Process light nodes final avarage rate
+ * @param {Array} nodes processed nodes array
+ * @returns {Number} final avarage rate
+ */
 
+function processNodesFinalAvarageRate(nodes) {
+    var finalAvarageRate = 0;
+    for (var i in nodes) {
+        var node = nodes[i];
+        finalAvarageRate += node.avarageRate;
+    }
 
+    finalAvarageRate /= nodes.length;
+
+    return finalAvarageRate;
+}
+
+module.exports = {
+    processTickersAvarageRate,
+    processNodesFinalAvarageRate
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

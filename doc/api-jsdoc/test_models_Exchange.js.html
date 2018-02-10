@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: test/models/Exchange.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,37 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: test/models/Exchange.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/** @title Schema Exchange for lightnode aggregation
+ * @param name String
+ */
 
-    <h3> </h3>
+var exchangeSchema = new Schema({
+    name: { type: String, required: true, unique: true },
+});
 
+/**
+ * @title Create model Exchange
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('Exchange', exchangeSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

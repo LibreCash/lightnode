@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: models/LightNodeState.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,43 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: models/LightNodeState.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/** @title Schema LightNodeState is state of lightnode
+ * @param nodeId String
+ * @param startTime Date
+ * @param uptime Date
+ * @param lastUpdate Date
+ */
 
-    <h3> </h3>
+var lightNodeStateSchema = new Schema({
+    nodeId: { type: String },
+    startTime: { type: Date, required: true },
+    uptime: { type: Date, required: true },
+    lastUpdate: { type: Date, required: true }
+});
 
+/**
+ * @title Create model LightNodeState
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('LightNodeState', lightNodeStateSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

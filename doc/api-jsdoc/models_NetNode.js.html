@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: models/NetNode.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,50 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: models/NetNode.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/** @title Schema NetNode for masternode remote nodes configuration
+ * @param name String
+ * @param host String
+ * @param port String
+ * @param state Enum
+ * @param error String
+ */
 
-    <h3> </h3>
+var netNodeSchema = new Schema({
+    name: { type: String },
+    host: { type: String },
+    port: { type: Number },
+    state: { 
+        type: String,
+        enum: ['online', 'offline', 'banned'],
+        default: ['offline'],
+        required: true
+    },
+    error: { type: String }
+});
 
+/**
+ * @title Create model NetNode
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('NetNode', netNodeSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: test/models/Ticker.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,47 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: test/models/Ticker.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/** @title Schema Ticker for lightnode aggregation
+ * @param ObjectId exchange
+ * @param String symbol Exchagne symbol
+ * @param Number lastest Lastest price
+ * @param Date updateTime Fetcher update time
+ * @param String timestamp Timestamp from exchange
+ * @param {*} err Error
+ */
 
-    <h3> </h3>
+var tickerSchema = new Schema({
+    exchange: { type: Schema.Types.ObjectId, ref: 'exchangeSchema' },
+    symbol: { type: String, required: true },
+    lastest: { type: Number, required: true },
+    updateTime: { type: String, required: true },
+    timestamp: { type: String, required: true },
+    err: { type: String }
+});
 
+/**
+ * @title Create model Ticker
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('Ticker', tickerSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: models/Account.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,44 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: models/Account.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const 
+    mongoose = require('mongoose'),
+    passportLocalMongoose = require('passport-local-mongoose');
 
+var Schema = mongoose.Schema;
 
-    <h3> </h3>
+/** @title Schema Account for remote incoming connection from masternodes using passport
+ * @param username String
+ * @param password String
+ */
 
+var accountSchema = new Schema({
+    username: String,
+    password: String
+});
 
+accountSchema.plugin(passportLocalMongoose);
 
+/**
+ * @title Create model Account
+ * @param conn mongoose connection
+ */
 
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.createModel = conn => {
+    return conn.model('Account', accountSchema);
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

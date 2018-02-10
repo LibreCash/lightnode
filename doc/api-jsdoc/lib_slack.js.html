@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: lib/slack.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,55 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: lib/slack.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const 
+    logger = require('./logger'),
+    Slackbot = require('slackbots');
 
+class Slack {
 
-    <h3> </h3>
+    /**
+     * Constructor
+     * @param {SlackOptions} options
+     */
 
+    constructor (options) {
+        // todo: add additional recheck with validate 
+        if (!options || !options.token || options.token === '' || !options.channel) {
+            logger.error('Slack token or channel is none. Slack disabled.');
+            return;
+        }
 
+        this.bot = new Slackbot({
+            token: options.token,
+            name: options.name || 'noname'
+        });
+        this.channel = options.channel;
+    }
 
+    /**
+     * Send message
+     * @param {String} message Message
+     * @param {*} params Slackbot params
+     */
 
+    send (message, params) {
+        this.bot &amp;&amp; this.bot.postMessageToChannel(this.channel, message, params);
+    }
+}
 
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = Slack;
+</code></pre>
+        </article>
+    </section>
 
 
 
