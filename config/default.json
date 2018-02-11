@@ -13,16 +13,13 @@
 "lightnode0":{
     "id": "L0",
 
-    "user": "test",
-    "password": "1234567890",
+    "secret": "secret",
 
     "host": "localhost",
     "port": 27925,
     "pingTimeout": 60,
 	"updateTimeout": 30,
 	
-    "apiKey": "LIGHTNODE-0-API-KEY",
-
     "exchanges": [
         {"kraken": {"currency": "XETHZUSD"}},
         {"bitfinex": {"currency": "ETHUSD"}}
@@ -51,16 +48,13 @@
 "lightnode1":{
     "id": "L1",
 
-    "user": "test",
-    "password": "1234567890",
+    "secret": "secret",
 
     "host": "localhost",
     "port": 27950,
     "pingTimeout": 60,
 	"updateTimeout": 30,
 	
-    "apiKey": "LIGHTNODE-1-API-KEY",
-
     "exchanges": [
         {"gdax": {"currency": "ETH-USD"}}
     ],
@@ -97,16 +91,14 @@
         {
             "name": "L-0",
             "description": "Alpha node",
-            "user": "test",
-            "password": "1234567890",
+            "secret": "secret",
             "host": "localhost",
             "port": 27925
         },
         {
             "name": "L-1",
             "description": "Beta node",
-            "user": "test",
-            "password": "1234567890",
+            "secret": "secret",
             "host": "localhost",
             "port": 27950
         }
