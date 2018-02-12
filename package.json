@@ -13,14 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/librecrypto/lightnode.git"
+    "url": "git+git@github.com:LibreCash/oracle-lightnode.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/librecrypto/lightnode#readme",
+  "homepage": "https://github.com/LibreCash/oracle-lightnode",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "crypto": "^1.0.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "got": "^8.0.3",
