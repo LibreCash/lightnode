@@ -1,33 +1,42 @@
-# [LibreBank LightNode](http://bitbucket.com/)
 
-## Documentation
+<h1 align="center">
+	<img width="400" src="http://librebank.com/img/logo-black.svg" alt="LibreBank Logo">
+	<br>
+	<br>
+</h1>
+## LibreBank LightNode
+LibreBank Oracle node - used to fetch and push ETH rates to LibreBank emission contracts
 
-You can find the React documentation on the "docs" foldear and [on the website](https://bitbucket.com/docs).
+## Requirements
+1. NodeJS v. 7.4+ (https://nodejs.org/en/)
+2. Build essentials package to your OS (needed for building some deps) For Debian-based linux you need intall build-essential package by apt. For Windows: latest Visual Studio C++ compiler.
+2. Any Ethereum node with WebSocket supports. We prefer geth (https://github.com/ethereum/go-ethereum/wiki/geth).
+3. Some Ether used to push data  to smart-contract.
 
-## Prerequirements
-
-**todo:** full modules list (must be synced with package.json)
-
+## Getting Started
+Simple clone this repo and install deps using npm
 ```
+git clone https://github.com/LibreCash/oracle-lightnode
+cd oracle-lightnode
 npm install
 ```
-
-## CLI
-
-Lightnode startup
-
+## Run node
+### LightNode startup
 ```
 node cli/lightnode-cli.js
 ```
-
-**todo:** move masternode to librebank-core
-
-Masternode startup
-
+## Masternode startup
 ```
 node cli/lightnode-cli.js
 ```
+## Configuring
+After installation procedure you need to configure some parameters in `config/config.json`. 
 
-## Contribute
+## Documentation 
+Project documentation located at `docs` subfolder.
 
-...
+## Contiributing
+If you want to help us get better - create issue and PR.
+
+## License
+Code released under the GPL licence.
