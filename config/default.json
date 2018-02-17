@@ -8,7 +8,7 @@
     "gasLimit": 147000,
     "password": "12345678",
     "minimumBalance": 1000,
-    "updateTimeout": 1000
+    "updateTimeout": 10
 },
 "lightnode0":{
     "id": "L0",
