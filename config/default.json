@@ -1,12 +1,12 @@
 {
 "smartContract":{
 	"web3url": "ws://localhost:8546",
-	"address":"0x17ECCDA512d0F59D60eC28a98ef831e264292d66",
-	"abiPath":"contracts/OurOracle-new.abi",
-    "from":"0x8128962bcdc69ca0b8d359ab0424e9a7b81bdf90",
+	"address":"0x169212BC695f5CA0F33ac51bF4d13500dcCC6A8C",
+	"abiPath":"./contracts/OwnOracle.abi",
+    "from":"0x61EDC0082535867BA7759CF5ED86b040672d88ff",
     "infuraUrl": "https://rinkeby.infura.io/E4jEQrMLKM1gTCwHUKFr",
-    "gasLimit": 147000,
-    "password": "12345678",
+    "utcFile":"./config/wallet/wallet.json",
+    "password": "123456789",
     "minimumBalance": 1000,
     "updateTimeout": 1000
 },
@@ -68,6 +68,7 @@
     "dbEnable": true,
 
     "mail": {
+        "enabled":false,
         "useTestAccount": true,
         "host": "smtp.ethereal.email",
         "port": 587,
@@ -77,6 +78,7 @@
     },
 
     "slack": {
+        "enabled":false,
         "name": "lightnode-1",
         "token": "",
         "channel": "ouroracles"
@@ -114,6 +116,7 @@
     },
 
     "mail": {
+        "enabled":false,
         "useTestAccount": false,
         "host": "smtp.ethereal.email",
         "port": 587,
@@ -129,6 +132,7 @@
     "logLevel": "debug",
 
     "slack": {
+        "enabled":false,
         "name": "master-0",
         "token": "",
         "channel": "ouroracles"
