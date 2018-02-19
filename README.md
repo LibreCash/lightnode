@@ -1,11 +1,12 @@
 
 <h1 align="center">
-	<img width="400" src="http://librebank.com/img/logo-black.svg" alt="LibreBank Logo">
+	<img width="300" src="http://librebank.com/img/logo-black.svg" alt="LibreBank Logo">
 	<br>
 	<br>
 </h1>
+
 ## LibreBank LightNode
-LibreBank Oracle node - used to fetch and push ETH rates to LibreBank emission contracts
+LibreBank Lightnode - oracle node used to fetch and push ETH rates to LibreBank emission & exchanger contracts.
 
 ## Requirements
 1. NodeJS v. 7.4+ (https://nodejs.org/en/)
@@ -14,12 +15,31 @@ LibreBank Oracle node - used to fetch and push ETH rates to LibreBank emission c
 3. Some Ether used to push data  to smart-contract.
 
 ## Getting Started
-Simple clone this repo and install deps using npm
+1. Simple clone this repo and install deps using npm
 ```
 git clone https://github.com/LibreCash/oracle-lightnode
 cd oracle-lightnode
 npm install
 ```
+2. Configurate. 
+Change configuration params at `config/default.json` file.
+
+3. Run ETH node in Websocket RPC mode.
+For geth you can use this command
+
+For Mainnet:
+```
+geth --ws --wsapi db,eth,net,web3,personal --wsorigins *
+```
+
+For Rinkeby testnet:
+
+```
+geth --rinkeby --ws --wsapi db,eth,net,web3,personal --wsorigins *
+```
+
+4. Run node
+
 ## Run node
 ### LightNode startup
 ```
