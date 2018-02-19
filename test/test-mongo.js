@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
-mongoose.connect('mongodb://localhost/test', {
-    useMongoClient: true
-}).then(() => {
+mongoose.connect('mongodb://localhost/test').then(() => {
     let
         Exchange = require('./models/Exchange'),
         Coin = require('./models/Coin');

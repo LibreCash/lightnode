@@ -65,9 +65,7 @@ async function connect(url) {
 
     initModels(conn);
 
-    await mongoose.connect(url, {
-        useMongoClient: true
-    });
+    await mongoose.connect(url);
 }
 
 /**
