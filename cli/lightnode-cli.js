@@ -1,6 +1,6 @@
 const
     minimist = require('minimist'),
-    LightNode = require('../lib/node/lightnode');
+    LightNode = require('../core/lib/node/lightnode');
 
 var usage = process.argv[1] + ' [--config <config>] [--section <section>] [--smartcontract <section>]';
 

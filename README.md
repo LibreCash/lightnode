@@ -11,13 +11,14 @@ LibreBank Lightnode - oracle node used to fetch and push ETH rates to LibreBank 
 ## Requirements
 1. NodeJS v. 7.4+ (https://nodejs.org/en/)
 2. Build essentials package to your OS (needed for building some deps) For Debian-based linux you need intall build-essential package by apt. For Windows: latest Visual Studio C++ compiler.
-2. Any Ethereum node with WebSocket supports. We prefer geth (https://github.com/ethereum/go-ethereum/wiki/geth).
-3. Some Ether used to push data  to smart-contract.
+3. Any Ethereum node with WebSocket supports. We prefer geth (https://github.com/ethereum/go-ethereum/wiki/geth).
+4. Some Ether used to push data  to smart-contract.
+5. MongoDB 3.0.12+
 
 ## Getting Started
 1. Simple clone this repo and install deps using npm
 ```
-git clone https://github.com/LibreCash/oracle-lightnode
+git clone --recursive https://github.com/LibreCash/oracle-lightnode
 cd oracle-lightnode
 npm install
 ```
@@ -42,10 +43,6 @@ geth --rinkeby --ws --wsapi db,eth,net,web3,personal --wsorigins *
 
 ## Run node
 ### LightNode startup
-```
-node cli/lightnode-cli.js
-```
-## Masternode startup
 ```
 node cli/lightnode-cli.js
 ```

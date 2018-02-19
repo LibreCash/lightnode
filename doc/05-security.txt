@@ -1,7 +1,0 @@
-1. Validator
-
-Module name: validator.js
-Description: common validator for function params/return
-*1 Reason - This is the Bank. 
-
-Ваше API должно быть FAQ пользователя.
