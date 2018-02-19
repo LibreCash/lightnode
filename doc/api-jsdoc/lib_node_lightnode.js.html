@@ -28,7 +28,7 @@
         <article>
             <pre class="prettyprint source linenums"><code>var
     EventEmitter = require('events'),
-    Promise = require('bluebird'),
+    delay = require('../helpers').delay,
     logger = require('../logger'),
     server = require('../net/server'),
     Fetcher = require('../fetcher/fetcher'),
@@ -179,7 +179,7 @@ class LightNode extends EventEmitter {
         this.onShutdown();
         
         // delayed shutdown for notify ui
-        Promise.delay(5000).then(()=>{
+        delay(5000).then(()=>{
             process.exit(0);
         });
     }

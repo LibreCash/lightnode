@@ -28,7 +28,7 @@
         <article>
             <pre class="prettyprint source linenums"><code>const
     EventEmitter = require('events'),
-    Promise = require('bluebird'),
+    delay = require('../helpers').delay,
     Web3 = require('web3'),
     logger = require('../logger');
 
@@ -206,7 +206,7 @@ class Web3Client extends EventEmitter {
         }
         
 
-        Promise.delay(this.options.updateTimeout * 1000).then(this.timerUpdate.bind(this));
+        delay(this.options.updateTimeout * 1000).then(this.timerUpdate.bind(this));
     }
 
 
