@@ -5,7 +5,7 @@
 	<br>
 </h1>
 
-## LibreBank LightNode
+# LibreBank Oracle Lightnode
 LibreBank Lightnode - oracle node used to fetch and push ETH rates to LibreBank emission & exchanger contracts.
 
 ## Requirements
